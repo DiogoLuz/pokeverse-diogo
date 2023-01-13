@@ -24,7 +24,15 @@ function App() {
       <Navigation />
 
       <h1>Pokemon should appear here</h1>
-      <PokemonCard />
+      {pokemonList.map((pokemon) => {
+        return (
+          <PokemonCard
+            key={pokemon.name}
+            name={pokemon.name}
+            url={pokemon.url}
+          />
+        );
+      })}
     </div>
   );
 }
